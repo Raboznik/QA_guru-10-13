@@ -4,7 +4,6 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
@@ -28,19 +27,6 @@ public class AyistGamesTest extends TestBase {
         });
     }
 
-//    @Test
-//    @DisplayName("Page console log should not have errors")
-//    void consoleShouldNotHaveErrorsTest() {
-//        step("Open url 'https://ayist.games/mainru'", () ->
-//                open(baseUrl));
-//
-//        step("Console logs should not contain text 'SEVERE'", () -> {
-//            String consoleLogs = DriverUtils.getConsoleLogs();
-//            String errorText = "SEVERE";
-//
-//            assertThat(consoleLogs).doesNotContain(errorText);
-//        });
-//    }
 
     @Test
     @DisplayName("Test for Privacy Policy")
@@ -244,10 +230,7 @@ public class AyistGamesTest extends TestBase {
         step("Check instagram link", () ->
                 $x("//*[@id=\"rec254241807\"]/div/div/div/div[1]/div/div[3]/a")
                         .shouldHave(href(instagram)));
-
-
     }
-
 }
 
 
