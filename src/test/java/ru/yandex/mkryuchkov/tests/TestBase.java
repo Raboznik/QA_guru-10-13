@@ -30,7 +30,7 @@ public class TestBase {
         String version = System.getProperty("version", "91");
         String size = System.getProperty("size", "1920x1080");
 
-        String remoteUrl = System.getProperty("remoteUrl", cfgs.url());
+        String remoteUrl = System.getProperty("remoteUrl", "selenoid.autotests.cloud/wd/hub");
         String login = System.getProperty("login", cfgs.login());
         String pass = System.getProperty("pass", cfgs.password());
 
@@ -48,7 +48,7 @@ public class TestBase {
 
         Attach.attachAsText("Browser: ", browser);
         Attach.attachAsText("Version: ", version);
-        Attach.attachAsText("Remote Url: ", cfgs.url());
+        Attach.attachAsText("Remote Url: ", "selenoid.autotests.cloud/wd/hub");
 
     }
 
