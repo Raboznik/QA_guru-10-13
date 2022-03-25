@@ -6,7 +6,6 @@ import org.aeonbits.owner.Config;
 public interface CredentialsConfig extends Config {
 
     @Key("url")
-    @DefaultValue("https://${login}:${password}@selenoid.autotests.cloud/wd/hub")
     String url();
 
     @Key("login")

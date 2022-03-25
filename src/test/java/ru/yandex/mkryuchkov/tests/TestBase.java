@@ -15,8 +15,6 @@ import static com.codeborne.selenide.Selenide.sleep;
 
 public class TestBase {
 
-    private static CredentialsConfig cfgs = ConfigFactory.create(CredentialsConfig.class);
-
     protected String baseUrl = "https://ayist.games/mainru";
     protected String facebook = "https://www.facebook.com/novelsgame/";
     protected String vk = "https://vk.com/novelsgame";
@@ -25,13 +23,18 @@ public class TestBase {
 
     @BeforeAll
     static void setUp() {
+
+        CredentialsConfig cfgs = ConfigFactory.create(CredentialsConfig.class);
+
         String browser = System.getProperty("browser", "chrome");
         String version = System.getProperty("version", "91");
         String size = System.getProperty("size", "1920x1080");
 
-        Configuration.baseUrl = "https://demoqa.com";
+        String remoteUrl = System.getProperty("remoteUrl", cfgs.url());
+        String login = System.getProperty("login", cfgs.login());
+        String pass = System.getProperty("pass", cfgs.password());
 
-        Configuration.remote = cfgs.url();
+        Configuration.remote = "https://" + login + ":" + pass + "@" + remoteUrl;
         Configuration.browser = browser;
         Configuration.browserVersion = version;
         Configuration.browserSize = size;
